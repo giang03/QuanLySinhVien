@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form th:action="@{/students/save}" method="post" align="center" th:object="${student}">
+        <h2>Add New Student</h2>
+        <input type="hidden" th:field="*{id}"/>
+        <table cellPadding="6px" align="center">
+            <tr>
+                <th align="left">Name</th>
+                <td>
+                    <input type="text" th:field="*{name}" width="80px" placeholder="Name"/>
+                </td>
+            </tr>
+            <tr>
+                <th align="left">Address</th>
+                <td>
+                    <textarea placeholder="Address" cols="20" rows="5" type="text" th:field="*{address}" width="80px"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <th></th>
+                <td>
+                    <input type="submit" value="SUBMIT" width="40px"/>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
